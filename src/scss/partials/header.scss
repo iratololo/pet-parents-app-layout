@@ -1,0 +1,59 @@
+@use "../vars";
+@use "../mixins";
+
+
+.header {
+    // border: 1px solid blue;
+    padding: 30px 0px;
+}
+
+.nav {
+
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    // .nav__logo
+
+    &__logo {}
+
+    // .nav__list
+
+    &__list {
+        display: flex;
+        gap: 70px;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 20px;
+        font-family: vars.$circular-font;
+        font-weight: 500;
+    }
+
+    // .nav__item
+
+    &__item {}
+
+    // .nav__link
+
+    &__link {
+        @include mixins.transition(color);
+        &:hover {
+        color: vars.$dark-color;
+        }
+    }
+}
+
+.logo {
+    font-size: 25px;
+    font-family: vars.$circular-font;
+    font-weight: 700;
+    display: flex;
+    gap:5px;
+    color: vars.$dark-color;
+    // .logo__svg
+
+    &__svg {
+        width: 30px;
+        height: 30px;
+    }
+}

@@ -1,0 +1,95 @@
+@use "../vars";
+@use "../mixins";
+
+.hero {
+    // .hero__slider
+    // padding: 20px 0 0px 0;
+    &__slider {}
+}
+
+.slider {
+
+    // .slider__slide
+
+    &__slide {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        align-items: center;
+    }
+
+}
+
+.slide {
+
+    // .slide__content
+
+    &__content {}
+
+    // .slide__title
+
+    &__title {
+        font-family: vars.$circular-font;
+        font-weight: 700;
+        font-size: 64px;
+        color: vars.$dark-color;
+        line-height: 115%;
+        margin-bottom: 31px;
+    }
+
+    // .slide__text
+
+    &__text {
+        font-size: 20px;
+        line-height: 160%;
+        margin-bottom: 42px;
+        max-width: 500px;
+    }
+
+    // .slide__button
+
+    &__button {
+        font-family: vars.$circular-font;
+        font-weight: 500;
+        font-size: 20px;
+        color: vars.$white-color;
+        background-color: vars.$accent-color;
+        padding: 18px 22px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 215px;
+        border-radius: 4px;
+        margin-bottom: 15px;
+        @include mixins.transition(background-color);
+        &:hover {
+            background-color: vars.$hover-color;
+        }
+    }
+
+    // .slide__note
+
+    &__note {}
+
+    // .slide__link
+
+    &__link {
+        font-family: vars.$circular-font;
+        font-weight: 500;
+        @include mixins.transition(color);
+        border-bottom: 1px solid;
+        border-color: inherit;
+            &:hover {
+                color: vars.$accent-color;
+            }
+    }
+
+    // .slide__image
+    
+    &__image {
+        
+        img {
+            max-width: 460px;
+        }
+    }
+}
