@@ -25,6 +25,8 @@
         align-items: center;
         justify-content: space-between;
         font-size: 20px;
+        // @include mixins.adaptiveValue("font-size", 20, 16);
+        
         font-family: vars.$montserrat-font;
         font-weight: 500;
     }

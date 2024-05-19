@@ -1,3 +1,4 @@
+@use "sass:math";
 @use "fonts";
 @use "reset";
 @use "vars";
@@ -8,11 +9,52 @@
 
 
 
-[class*="__container"] {
-    max-width: 1216px;
-    margin: 0px auto;
-    padding: 0px 15px;
+@if (vars.$responsiveType==1) {
+    // responsive (without breakpoints)
+    [class*="__container"] {
+            @if (vars.$maxWidthContainer>0) {
+                max-width: mixins.rem(vars.$maxWidthContainer);
+                box-sizing: content-box;
+                margin: 0 auto;
+            }
+    
+            @if (vars.$containerPadding>0) {
+                padding: 0 mixins.rem(math.div(vars.$containerPadding, 2));
+            }
+        }
+}  @else {
+    // adaptive (with breakpoints)
+    [class*="__container"] {
+        margin: 0 auto;
+        @if (vars.$maxWidthContainer>0) {
+            max-width: mixins.rem(vars.$maxWidthContainer);
+            box-sizing: content-box;
+        } @else {
+            @if (vars.$containerPadding>0) {
+                    padding: 0 mixins.rem(math.div(vars.$containerPadding, 2));
+                }
+        }
+        @media (max-width: vars.$pc) {
+			max-width: mixins.rem(970);
+		}
+		@media (max-width: vars.$tablet) {
+			max-width: mixins.rem(750);
+		}
+		@media (max-width: vars.$mobile) {
+			max-width: none;
+			@if (vars.$containerPadding>0 and vars.$maxWidthContainer>0) {
+				padding: 0 mixins.rem(math.div(vars.$containerPadding, 2));
+			}
+		}
+
+    }
 }
+
+// [class*="__container"] {
+//     max-width: 1215px;
+//     margin: 0px auto;
+//     padding: 0px 15px;
+// }
 
 // .container {
 //     max-width: 1216px;
@@ -20,13 +62,15 @@
 //     padding: 0px 15px;
 // }
 
+
+
 html{
 height: 100%;
 }
 
 body {
     height: 100%;
-    font-family: vars.$text-font;
+    font-family: vars.$default-font;
     color: vars.$text-color;
     background: vars.$white-color;
     .wrapper {
@@ -57,3 +101,4 @@ body {
         min-width: 290px;
     }
 }
+
