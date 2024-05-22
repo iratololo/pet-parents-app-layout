@@ -9,9 +9,9 @@
         }
     &__swiper {
         // для другого варіанту
-        // @media (max-width:$mobile){
-        //      margin-bottom: 20px; 
-        // }
+        @media (max-width:$mobile){
+             margin-bottom: 20px; 
+        }
     }
     &__footer {
         text-align: center;
@@ -24,9 +24,6 @@
 
 // для другого варіанту
 .swiper {
-    @media (max-width:$mobile) {
-            margin-bottom: 20px;
-        }
 }
 
 .swiper-wrapper {

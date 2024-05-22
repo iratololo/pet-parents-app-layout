@@ -5,60 +5,43 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-// const swiper = new Swiper('.swiper', {
-//     modules: [Pagination, Autoplay, EffectFade],
-//     direction: 'horizontal',
-//     slidesPerView: 1,
-//     spaceBetween: 20,
-//     speed:800,
-//     loop: true,
-//     // autoHeight: true,
-//     pagination: {
-//     el: '.swiper-pagination',
-//     },
-//     // autoplay: {
-//     //     delay: 4000,
-//     //     pauseOnMouseEnter: true,
-//     // },
-// });
+const swiper1 = new Swiper('.swiper1', {
+    modules: [Pagination, Autoplay, EffectFade],
+    direction: 'horizontal',
+    slidesPerView: 1,
+    spaceBetween: 20,
+    speed:800,
+    loop: true,
+    // autoHeight: true,
+    pagination: {
+    el: '.swiper-pagination1',
+    },
+    // autoplay: {
+    //     delay: 4000,
+    //     pauseOnMouseEnter: true,
+    // },
+});
 
 
-function bildSliders() {
-	//BildSlider
-	let sliders = document.querySelectorAll('[class*="__swiper"]:not(.swiper-wrapper)');
-	if (sliders) {
-		sliders.forEach(slider => {
-			slider.parentElement.classList.add('swiper');
-			slider.classList.add('swiper-wrapper');
-			for (const slide of slider.children) {
-				slide.classList.add('swiper-slide');
-            };
-		});
-	}
-}
+const swiper2 = new Swiper('.swiper2', {
+    modules: [Pagination, Autoplay, EffectFade],
+    direction: 'horizontal',
+    slidesPerView: 2,
+    spaceBetween: 20,
+    speed:800,
+    loop: true,
+    // autoHeight: true,
+    pagination: {
+    el: '.swiper-pagination2',
+    },
+    autoplay: {
+        delay: 4000,
+        pauseOnMouseEnter: true,
+    },
+}); 
 
 
-function initSliders() { 
-    bildSliders();
 
-    if (document.querySelector('.hero__swiper')) { 
-        new Swiper('.swiper', {
-            modules: [Pagination, Autoplay, EffectFade],
-            direction: 'horizontal',
-            slidesPerView: 1,
-            spaceBetween: 20,
-            speed: 800,
-            loop: true,
-            // autoHeight: true,
-            pagination: {
-                el: '.swiper-pagination',
-            },
-            // autoplay: {
-            //     delay: 4000,
-            //     pauseOnMouseEnter: true,
-            // }, 
-        });
-    };
-};
 
-initSliders();
+
+
