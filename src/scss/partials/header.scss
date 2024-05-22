@@ -1,10 +1,29 @@
-@use "../vars";
-@use "../mixins";
+// @use "../vars";
+// @use "../mixins";
 
 
 .header {
     // border: 1px solid blue;
-    padding: 35px 0px;
+    @include adaptiveValue("padding-top",35 ,20,1245,320,1);
+    @include adaptiveValue("padding-bottom", 35, 20, 1245, 320, 1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 55;
+    &::before{
+        content:'';
+        position: absolute;
+        z-index: 55;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $white-color;
+        .menu-open & {
+            background-color: $pale-color;
+        }
+    }
 }
 
 .nav {
@@ -15,20 +34,56 @@
     justify-content: space-between;
     // .nav__logo
 
-    &__logo {}
+    &__logo {
+        position: relative;
+        flex-shrink: 0;
+        flex-grow: 0;
+        flex-basis: 180px;
+        z-index: 56;
+    }
+
+        // .nav__body
+    
+        &__body {
+            position: relative;
+            z-index: 56;
+            @media (max-width:$mobile) {
+                position: fixed;
+                z-index: inherit;
+                overflow: auto;
+                top: 0;
+                left: 0;
+                transform: translate(-100%, 0);
+                height: 100%;
+                width: 100%;
+                background-color: $white-color;
+                @include transition(transform);
+                padding-bottom: 30px;
+                @include adaptiveValue("padding-top", 130, 110, 768, 320, 1);
+                .menu-open & {
+                    transform: translate(0, 0);
+                }
+            }
+        }
 
     // .nav__list
 
     &__list {
         display: flex;
-        gap: 70px;
+        flex-direction: column;
+        row-gap: 30px;
         align-items: center;
-        justify-content: space-between;
-        font-size: 20px;
-        // @include mixins.adaptiveValue("font-size", 20, 16);
-        
-        font-family: vars.$montserrat-font;
+        justify-content: center;
+        @include adaptiveValue("font-size", 25, 20, 768, 320, 1);
+        font-family: $montserrat-font;
         font-weight: 500;
+        @media (min-width:$mobile) {
+            flex-direction: row;
+            flex-wrap: wrap;
+            row-gap: 20px;
+            @include adaptiveValue("column-gap", 70, 30, 1245, 768, 1);
+            @include adaptiveValue("font-size", 20, 18, 1245, 768, 1);
+        }
     }
 
     // .nav__item
@@ -38,24 +93,80 @@
     // .nav__link
 
     &__link {
-        @include mixins.transition(color);
+        @include transition(color);
         &:hover {
-        color: vars.$dark-color;
+        color: $dark-color;
         }
+    }
+
+    // .nav__menu-btn
+
+    &__menu-btn {
+
     }
 }
 
 .logo {
     font-size: 25px;
-    font-family: vars.$montserrat-font;
+    font-family: $montserrat-font;
     font-weight: 700;
     display: flex;
     gap:5px;
-    color: vars.$dark-color;
+    color: $dark-color;
     // .logo__svg
 
     &__svg {
         width: 30px;
         height: 30px;
     }
+}
+
+//====================================================================================================
+
+//Burger
+
+.btn-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+        flex-basis: 40px;
+		width: 40px;
+		height: 18px;
+		cursor: pointer;
+		z-index: 56;
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			left: 0px;
+			position: absolute;
+			width: 100%;
+			height: 2px;
+			background-color: $dark-color;
+		}
+		&::before {
+			top: 0px;
+		}
+		&::after {
+			bottom: 0px;
+		}
+		span {
+			top: calc(50% - 1px);
+		}
+		.menu-open & {
+			span {
+				transform: scale(0);
+			}
+			&::before {
+				transform: rotate(-45deg);
+				top: calc(50% - 1px);
+			}
+			&::after {
+				transform: rotate(45deg);
+				bottom: calc(50% - 1px);
+			}
+		}
+	}
 }

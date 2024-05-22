@@ -15,29 +15,29 @@ $pale-color: #FFF1F9;
 $white-color: #FFF;
 $hover-color: #ff6ba6;
 
-// Settings ==========================================================================================================================================
+// // Settings ==========================================================================================================================================
 
-// Min page width
-$minWidth: 320;
-// Width of the layout
-$maxWidth: 1440;
-// Width of the container
-$maxWidthContainer: 1215;
-// Total padding at the container
-// (30 = 15px left + 15px right)
-$containerPadding: 30;
+// // Min page width
+// $minWidth: 320;
+// // Width of the layout
+// $maxWidth: 1440;
+// // Width of the container
+// $maxWidthContainer: 1215;
+// // Total padding at the container
+// // (30 = 15px left + 15px right)
+// $containerPadding: 30;
 
-// Type of adaptive:
-// 1 = responsive (without breakpoints),
-// 2 = adaptive (with breakpoints)
-$responsiveType: 1;
+// // Type of adaptive:
+// // 1 = responsive (without breakpoints),
+// // 2 = adaptive (with breakpoints)
+// $responsiveType: 1;
 
-// Width for working out the first break point
-$containerWidth: $maxWidthContainer + $containerPadding;
+// // Width for working out the first break point
+// $containerWidth: $maxWidthContainer + $containerPadding;
 
-// Breakpoints
-$pc: mixins.em($containerWidth);
-$tablet: mixins.em(991.98);
-$mobile: mixins.em(767.98);
-$mobileSmall: mixins.em(479.98);
+// // Breakpoints
+// $pc: mixins.em($containerWidth);
+// $tablet: mixins.em(991.98);
+// $mobile: mixins.em(767.98);
+// $mobileSmall: mixins.em(479.98);
 

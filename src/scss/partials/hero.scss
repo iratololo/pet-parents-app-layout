@@ -1,61 +1,99 @@
-@use "../vars";
-@use "../mixins";
+// @use "../vars";
+// @use "../mixins";
 
 .hero {
     // .hero__slider
-    padding: 20px 0 0px 0;
-    // border: 1px solid green;
-    &__slider {}
+    @include adaptiveValue("padding-top", 120, 90, 1245, 320, 1);
+    @media (max-width:$mobile) {
+            padding-bottom: 20px;
+        }
+    &__swiper {
+        // для другого варіанту
+        // @media (max-width:$mobile){
+        //      margin-bottom: 20px; 
+        // }
+    }
+    &__footer {
+        text-align: center;
+        @media (min-width:$mobile) {
+            display: none;
+        }
+    }
+}
+
+
+// для другого варіанту
+.swiper {
+    @media (max-width:$mobile) {
+            margin-bottom: 20px;
+        }
 }
 
 .swiper-wrapper {
-    align-items: center;
-    // margin-bottom: 30px;
-    padding-bottom: 30px;
-    // border: 1px solid red;
+    padding-bottom: 15px;
+    @media (min-width:$mobile){
+        align-items: center;
+        padding-bottom: 40px;
+    }
+}
+
+.swiper-pagination {
+   bottom: 0!important;
 }
 
 .slide {
     display: flex;
-    justify-content: space-between;
-    gap: 30px;
+    flex-direction: column-reverse;
+    row-gap: 15px;
     align-items: center;
-    // border: 1px solid blue;
+    justify-content: center;
+    @media (min-width:$mobile){
+    justify-content: space-between;
+    flex-direction: row;
+    column-gap: 30px;
+    }
 
     // .slide__content
 
     &__content {
-        flex: 0 1 650px;
+        text-align: center;
+        @media (min-width:$mobile) {
+            flex: 0 1 650px;
+            text-align: left;
+        }
     }
 
     // .slide__title
 
     &__title {
-        font-family: vars.$montserrat-font;
+        font-family: $montserrat-font;
         font-weight: 700;
-        font-size: 60px;
-        color: vars.$dark-color;
+        @include adaptiveValue("font-size",60,25 );
+        color: $dark-color;
         line-height: 115%;
-        margin-bottom: 20px;
+        margin-bottom: em(25,60);
     }
 
     // .slide__text
 
     &__text {
-        font-size: 20px;
+        font-size: rem(20);
         line-height: 160%;
-        margin-bottom: 42px;
-        max-width: 500px;
+        margin-bottom: em(40, 20);
+        @include adaptiveValue("margin-bottom",40,20, 1245,768,1);
+        @media (min-width:$mobile){
+            max-width: 500px;
+        }
     }
 
     // .slide__button
 
     &__button {
-        font-family: vars.$montserrat-font;
+        font-family: $montserrat-font;
         font-weight: 500;
-        font-size: 20px;
-        color: vars.$white-color;
-        background-color: vars.$accent-color;
+        font-size: rem(20);
+        color: $white-color;
+        background-color: $accent-color;
         padding: 18px 22px;
         display: inline-flex;
         align-items: center;
@@ -63,11 +101,20 @@
         min-width: 215px;
         border-radius: 4px;
         margin-bottom: 15px;
-        @include mixins.transition(background-color);
+        @include transition(background-color);
         &:hover {
-            background-color: vars.$hover-color;
+            background-color: $hover-color;
         }
     }
+
+    // .slide__footer
+    
+    &__footer {
+        @media (max-width:$mobile){
+             display: none; 
+        }
+    }
+
 
     // .slide__note
 
@@ -76,23 +123,31 @@
     // .slide__link
 
     &__link {
-        font-family: vars.$montserrat-font;
+        font-family: $montserrat-font;
         font-weight: 500;
-        @include mixins.transition(color);
+        @include transition(color);
         border-bottom: 1px solid;
         border-color: inherit;
             &:hover {
-                color: vars.$accent-color;
+                color: $accent-color;
             }
     }
 
     // .slide__image
     
     &__image {
-        
+        @include ibg(bottom);
+        flex: 1 1 300px;
+        width: 100%;
         img {
-            // max-width: 460px;
-            max-height: 500px;
+            object-fit: contain;
         }
+        @media (min-width:$mobile) {
+                flex: 1 1 400px;
+                padding: 0px 0px 40% 0px;
+                img {
+                        object-position: center;
+                    }
+            }
     }
 }

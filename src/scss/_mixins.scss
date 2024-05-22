@@ -46,7 +46,7 @@
 
     $propertyValue: #{"clamp(" rem($minSize) "," $flyValue "," rem($startSize) ")"};
 
-    @if $widthFrom ==$containerWidth or $widthFrom ==vars.$maxWidth or $keepSize ==1 or $keepSize ==2 {
+    @if $widthFrom ==$containerWidth or $widthFrom ==$maxWidth or $keepSize ==1 or $keepSize ==2 {
         @media (min-width: $widthFromMedia) {
             #{$property}: rem($startSize);
         }
