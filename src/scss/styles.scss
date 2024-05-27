@@ -136,7 +136,9 @@ body {
 
 
 
-
+@import "common";
 @import "./partials/header.scss";
 @import "./partials/hero.scss";
+@import "./partials/sign-up.scss";
+@import "./partials/auth.scss";
 

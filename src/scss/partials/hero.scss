@@ -86,21 +86,20 @@
     // .slide__button
 
     &__button {
-        font-family: $montserrat-font;
-        font-weight: 500;
         font-size: rem(20);
+        padding: 18px 22px;
         color: $white-color;
         background-color: $accent-color;
-        padding: 18px 22px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
         min-width: 215px;
-        border-radius: 4px;
         margin-bottom: 15px;
         @include transition(background-color);
-        &:hover {
-            background-color: $hover-color;
+        @media (any-hover: hover){
+            &:hover{
+                background-color: $hover-color;
+            }
         }
     }
 
@@ -120,14 +119,6 @@
     // .slide__link
 
     &__link {
-        font-family: $montserrat-font;
-        font-weight: 500;
-        @include transition(color);
-        border-bottom: 1px solid;
-        border-color: inherit;
-            &:hover {
-                color: $accent-color;
-            }
     }
 
     // .slide__image

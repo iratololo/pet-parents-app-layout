@@ -1,0 +1,151 @@
+.auth-link {
+    font-family: $montserrat-font;
+    font-weight: 500;
+    @include transition(color);
+    border-bottom: 1px solid;
+    border-color: inherit;
+    @media (any-hover: hover){
+        &:hover{
+            color: $accent-color;
+        }
+    }
+}
+
+.button {
+    font-family: $montserrat-font;
+    font-weight: 500;
+    border-radius: 4px;
+}
+
+// FORM
+
+.form-title {
+    font-family: $montserrat-font;
+    font-weight: 700;
+    @include adaptiveValue("font-size", 35, 25);
+    color: $dark-color;
+    line-height: 115%;
+}
+
+
+.google-auth-btn {
+    font-size: rem(18);
+    padding: 12px 10px;
+    color: $text-color;
+    border: 1px solid;
+    border-color: $text-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    @include transition();
+
+    @media (any-hover: hover) {
+        &:hover {
+            color: $accent-color;
+            border-color: $accent-color;
+        }
+    }
+
+    // .google-auth-btn
+
+    &__svg {
+        max-width: 25px;
+    }
+}
+
+
+.form {
+
+
+    // .form__items
+
+    &__items {
+        :not(:last-child) {
+            margin-bottom: 20px;
+        }
+
+        margin-bottom: 30px;
+    }
+
+    // .form__item
+
+    &__item {
+        :not(:last-child) {
+            margin-bottom: 5px;
+        }
+    }
+
+    // .form__input
+
+    &__input {
+        width: 100%;
+        border: 1px solid;
+        border-color: $text-color;
+        border-radius: 4px;
+        padding: 12px 10px;
+        display: block;
+        @include transition(all);
+        color: $dark-color;
+
+        &::placeholder {
+            font-size: rem(14);
+            @include transition(all);
+        }
+
+        &:focus {
+            border-color: $dark-color;
+
+            &::placeholder {
+                transform: translate(-100%, 0);
+            }
+        }
+    }
+
+    // .form__label
+
+    &__label {
+        font-size: rem(13);
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+
+    // .form__footer
+
+    &__footer {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    // .form__var
+
+    &__var {
+        font-size: $montserrat-font;
+        font-weight: 700;
+        color: $dark-color;
+        text-align: center;
+    }
+
+    // .form__btn
+
+    &__btn {
+        font-size: rem(18);
+        padding: 12px 10px;
+        color: $white-color;
+        background-color: $accent-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        @include transition(background-color);
+
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $hover-color;
+            }
+        }
+    }
+}
