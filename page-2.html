@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Log in</title>
     <script type="module" crossorigin src="/pet-parents-app-layout/assets/vendor-DL0151d0.js"></script>
-    <script type="module" crossorigin src="/pet-parents-app-layout/assets/main-6IinEHgm.js"></script>
-    <link rel="stylesheet" crossorigin href="/pet-parents-app-layout/assets/main-CXUiGLbe.css">
+    <script type="module" crossorigin src="/pet-parents-app-layout/assets/main-BkqZ9wOj.js"></script>
+    <link rel="stylesheet" crossorigin href="/pet-parents-app-layout/assets/main-tW5lO7WX.css">
     <link rel="stylesheet" crossorigin href="/pet-parents-app-layout/assets/vendor-wjhWB3DI.css">
   </head>
   <body>
@@ -40,63 +40,56 @@
 
       </header>
       <main>
-        <section>
-          <a href="./index.html">Go to home</a>
+        <section class="section">
+          <!-- <a href="./index.html">Go to home</a> -->
           <div class="auth">
   <div class="auth__container">
-    <div class="auth__title form-title">Welcome back</div>
-    <div class="auth__form">
-      <form class="form">
-        <div class="form__items">
-          <div class="form__item">
-            <input
-              class="form__input input"
-              name="user"
-              type="text"
-              placeholder="Name"
-              maxlength="30"
-              required />
-            <span class="form__label">0/30</span>
-          </div>
-          <div class="form__item">
-            <input
-              class="form__input input"
-              name="email"
-              type="email"
-              placeholder="Email"
-              maxlength="100"
-              required />
-            <span class="form__label">0/100</span>
-          </div>
-          <div class="form__item">
-            <input
-              class="form__input input"
-              name="password"
-              type="password"
-              placeholder="Password"
-              maxlength="50"
-              required />
-            <div class="form__label">
-              Use 8 or more characters with a mix of uppercase and lowercase
-              letters, numbers and symbols.<span>0/100</span>
+    <div class="auth-content">
+      <div class="auth-content__description">
+        <div class="auth-content__label">Log in</div>
+        <div class="auth-content__title">Welcome Back</div>
+        <div class="auth-content__link">
+          New User?
+          <a class="auth-link" href="./page-3.html">Sign up</a>
+        </div>
+      </div>
+      <div class="auth-content__form">
+        <form class="form">
+          <div class="form__items">
+            <div class="form__item">
+              <input
+                class="form__input input"
+                name="email"
+                type="email"
+                placeholder="Email"
+                maxlength="100"
+                required />
+            </div>
+            <div class="form__item">
+              <input
+                class="form__input input"
+                name="password"
+                type="password"
+                placeholder="Password"
+                maxlength="50"
+                required />
+              <div class="form__label">
+                <a class="form__label-link" href="">Forgot your password?</a>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="form__footer">
-          <button class="form__btn button">Get started</button>
-          <div class="form__var">or</div>
-          <button class="google-auth-btn button">
-            <img
-              class="google-auth-btn__svg"
-              src="/pet-parents-app-layout/icons/google.svg"
-              alt="Google" />Continue with Google
-          </button>
-          <div>
-            Already signed up?
-            <a class="auth-link" href="./page-2.html">Log in</a>
+          <div class="form__footer">
+            <button class="form__btn button">Get started</button>
+            <div class="form__var">or</div>
+            <button class="google-auth-btn button">
+              <img
+                class="google-auth-btn__svg"
+                src="/pet-parents-app-layout/icons/google.svg"
+                alt="Google" />Continue with Google
+            </button>
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   </div>
 </div>
