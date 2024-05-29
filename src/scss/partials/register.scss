@@ -1,0 +1,66 @@
+.register {
+
+    // .register__container
+
+    &__container {}
+}
+
+.auth-content {
+
+    // .auth-content__description
+
+    &__description {
+        margin-bottom: 30px;
+    }
+
+    // .auth-content__label
+    
+    &__label {
+        font-family: $montserrat-font;
+        font-weight: 500;
+        line-height: 115%;
+        text-transform: uppercase;
+        font-size: rem(14);
+    }
+
+    // .auth-content__title
+
+    &__title {
+        font-family: $montserrat-font;
+        font-weight: 700;
+        @include adaptiveValue("font-size", 45, 26);
+        color: $dark-color;
+        line-height: 115%;
+        margin-bottom: em(15, 45);
+    }
+
+    // .auth-content__text
+
+    &__text {
+        @include adaptiveValue("font-size", 21, 18);
+        line-height: 115%;
+    }
+
+    // .auth-content__form
+
+    &__form {
+        max-width: 400px;
+        @media (max-width:$mobile){
+            margin: 0 auto;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

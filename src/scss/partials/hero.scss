@@ -3,10 +3,9 @@
 
 .hero {
     // .hero__slider
-    @include adaptiveValue("padding-top", 120, 90, 1245, 320, 1);
-    @media (max-width:$mobile) {
-            padding-bottom: 20px;
-        }
+    // @media (max-width:$mobile) {
+    //         padding-bottom: 20px;
+    //     }
     &__swiper {
         // для другого варіанту
         @media (max-width:$mobile){

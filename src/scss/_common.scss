@@ -1,12 +1,18 @@
+.section {
+    @include adaptiveValue("padding-top", 120, 90, 1245, 320, 1);
+    padding-bottom: 20px;
+}
+
 .auth-link {
     font-family: $montserrat-font;
     font-weight: 500;
+    color: $accent-color;
     @include transition(color);
     border-bottom: 1px solid;
     border-color: inherit;
     @media (any-hover: hover){
         &:hover{
-            color: $accent-color;
+            color: $hover-color;
         }
     }
 }
@@ -18,15 +24,6 @@
 }
 
 // FORM
-
-.form-title {
-    font-family: $montserrat-font;
-    font-weight: 700;
-    @include adaptiveValue("font-size", 35, 25);
-    color: $dark-color;
-    line-height: 115%;
-}
-
 
 .google-auth-btn {
     font-size: rem(18);
@@ -55,6 +52,30 @@
     }
 }
 
+.input {
+    border: 1px solid;
+    border-color: $text-color;
+    border-radius: 4px;
+    padding: 12px 10px;
+    @include transition(all);
+        color: $dark-color;
+    
+        &::placeholder {
+            font-size: rem(14);
+            @include transition(all);
+        }
+    
+        &:focus {
+            border-color: $dark-color;
+    
+            &::placeholder {
+                transform: translate(-100%, 0);
+            }
+        }
+}
+
+
+
 
 .form {
 
@@ -66,14 +87,14 @@
             margin-bottom: 20px;
         }
 
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
 
     // .form__item
 
     &__item {
         :not(:last-child) {
-            margin-bottom: 5px;
+            margin-bottom: 3px;
         }
     }
 
@@ -81,26 +102,7 @@
 
     &__input {
         width: 100%;
-        border: 1px solid;
-        border-color: $text-color;
-        border-radius: 4px;
-        padding: 12px 10px;
         display: block;
-        @include transition(all);
-        color: $dark-color;
-
-        &::placeholder {
-            font-size: rem(14);
-            @include transition(all);
-        }
-
-        &:focus {
-            border-color: $dark-color;
-
-            &::placeholder {
-                transform: translate(-100%, 0);
-            }
-        }
     }
 
     // .form__label
@@ -111,6 +113,18 @@
         justify-content: flex-end;
         gap: 10px;
     }
+
+        // .form__label-link
+    
+        &__label-link {
+            @include transition(color);
+            
+            @media (any-hover: hover) {
+                &:hover {
+                    color: $hover-color;
+                }
+            }
+        }
 
     // .form__footer
 

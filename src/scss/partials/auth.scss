@@ -1,22 +1,4 @@
-.auth {
-    @include adaptiveValue("padding-top", 120, 90, 1245, 320, 1);
-    // .auth__container
 
-    &__container {}
-
-    // .auth__title
-
-    &__title {
-        margin-bottom: em(25, 35);
-    }
-
-    // .auth__form
-
-    &__form {
-        max-width: 400px;
-        margin: 0 auto;
-    }
-}
 
 
 
